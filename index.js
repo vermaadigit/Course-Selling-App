@@ -15,19 +15,19 @@ app.post('/user/signin', function(req, res) {
 
 app.get('/user/purchases', function(req, res) {
     res.json({
-        message : ''
+        message : 'Purchases Endpoint'
     })
 })
 
 app.post('/course/purchase', function(req, res) {
     res.json({
-        message : ''
+        message : 'Purchase Endpoint'
     })
 })
 
 app.get('/courses', function(req, res) {
     res.json({
-        message : ''
+        message : 'Courses Endpoint'
     })
 })
 
