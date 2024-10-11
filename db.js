@@ -1,17 +1,25 @@
 const mongoose = require('mongoose')
-const user = require('./Routes/user')
-const Schema = mongoose.Schema
-const ObjectId = mongoose.ObjectId
 
-const User = new Schema({
-    _id : ObjectId,
-    email : String,
+
+const Schema = mongoose.Schema
+const ObjectId = mongoose.Types.ObjectId
+
+const userSchema = new Schema({
+    email : {type : String, unique : true},
     password : String,
     firstName : String,
     lastName : String
 })
 
-const Course = new Schema({
+const adminSchema = new Schema({
+    email : {type : String, unique : true},
+    password : String,
+    firstName : String,
+    lastName : String
+})
+
+
+const courseSchema = new Schema({
     title : String,
     description : String,
     price : Number,
@@ -19,28 +27,19 @@ const Course = new Schema({
     creatorId : ObjectId
 })
 
-const Admin = new Schema({
-    _id : ObjectId,
-    email : String,
-    password : String,
-    firstName : String,
-    lastName : String
-})
-
-const PurchasedCourse = new Schema({
-    _id : ObjectId,
+const purchaseSchema = new Schema({
     courseId : ObjectId,
     userId : ObjectId
 })
 
-const UserModel = mongoose.model('users', User)
-const CourseModel = mongoose.model('courses', Course)
-const AdminModel = mongoose.model('admin', Admin)
-const PurchasedCourseModel = mongoose.model('purchasedcourse', PurchasedCourse)
+const userModel = mongoose.model('user', userSchema)
+const courseModel = mongoose.model('course', adminSchema)
+const adminModel = mongoose.model('admin', courseSchema)
+const purchaseModel = mongoose.model('purchase', purchaseSchema)
 
 module.exports = {
-    UserModel : UserModel,
-    CourseModel : CourseModel,
-    AdminModel : AdminModel,
-    PurchasedCourseModel : PurchasedCourseModel
+    userModel : userModel,
+    courseModel : courseModel,
+    adminModel : adminModel,
+    purchaseModel : purchaseModel
 }
