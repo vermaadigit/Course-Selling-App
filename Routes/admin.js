@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken")
 const JWT_ADMIN_PASSWORD = "notserve"
 
 adminRouter.post('/signup', async function(req, res) {
-    const { email, password, firstName, lastName } = req.body; // Todo : Adding Zod validation
+    const { email, password, firstName, lastName } = req.body // Todo : Adding Zod validation
     // Todo : hash the password so plaintext pw is not stored in DB
 
     // Todo :  Put it in Try catch Block
