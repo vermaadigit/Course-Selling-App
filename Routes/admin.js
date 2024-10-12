@@ -98,7 +98,7 @@ adminRouter.get('/course/bulk', adminMiddleware, async function(req, res) {
         courses
     })
 })
-
+ 
 module.exports = {
     adminRouter : adminRouter
 }
