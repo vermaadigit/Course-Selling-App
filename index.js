@@ -1,9 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
+
 const { userRouter } = require('./Routes/user')
 const { adminRouter } = require('./Routes/admin')
 const { courseRouter } = require('./Routes/course')
-
 const app = express()
 
 app.use("/api/v1/user", userRouter)
