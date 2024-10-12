@@ -7,7 +7,7 @@ const ObjectId = mongoose.Types.ObjectId
 const userSchema = new Schema({
     email : {type : String, unique : true},
     password : String,
-    firstName : String,
+    firstName : String, 
     lastName : String
 })
 
@@ -33,8 +33,8 @@ const purchaseSchema = new Schema({
 })
 
 const userModel = mongoose.model('user', userSchema)
-const courseModel = mongoose.model('course', adminSchema)
-const adminModel = mongoose.model('admin', courseSchema)
+const courseModel = mongoose.model('course', courseSchema)
+const adminModel = mongoose.model('admin', adminSchema)
 const purchaseModel = mongoose.model('purchase', purchaseSchema)
 
 module.exports = {
